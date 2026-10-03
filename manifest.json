@@ -1,0 +1,26 @@
+{
+    "manifest_version": 3,
+    "name": "TOTO Scraper",
+    "version": "1.0.0",
+    "description": "Reads results from info.toto.bg in the browser.",
+    "permissions": [
+        "activeTab"
+    ],
+    "host_permissions": [
+        "https://info.toto.bg/*"
+    ],
+    "action": {
+        "default_title": "TOTO Scraper"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://info.toto.bg/results/*"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "run_at": "document_idle"
+        }
+    ]
+}
